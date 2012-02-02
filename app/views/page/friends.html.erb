@@ -1,76 +1,13 @@
 <div data-role="content">
     <ul data-role="listview" data-theme="g">
+      <% @fb_user.friends.each do |friend| %>
         <li>
-          <a href="acura.html">
-            <img src="http://dl.dropbox.com/u/993132/eu.jpg" />
-		    <h3>Arthur Granado</h3>
+          <a href="#">
+            <img src="<%= friend.picture %>" />
+		    <h3><%= friend.name %></h3>
           </a>
         </li>
         <li>
-          <a href="acura.html">
-            <img src="http://dl.dropbox.com/u/993132/eu.jpg" />
-		    <h3>Arthur Granado</h3>
-          </a>
-        </li>
-        <li>
-          <a href="acura.html">
-            <img src="http://dl.dropbox.com/u/993132/eu.jpg" />
-		    <h3>Arthur Granado</h3>
-          </a>
-        </li>
-        <li>
-          <a href="acura.html">
-            <img src="http://dl.dropbox.com/u/993132/eu.jpg" />
-		    <h3>Arthur Granado</h3>
-          </a>
-        </li>
-        <li>
-          <a href="acura.html">
-            <img src="http://dl.dropbox.com/u/993132/eu.jpg" />
-		    <h3>Arthur Granado</h3>
-          </a>
-        </li>
-        <li>
-          <a href="acura.html">
-            <img src="http://dl.dropbox.com/u/993132/eu.jpg" />
-		    <h3>Arthur Granado</h3>
-          </a>
-        </li>
-        <li>
-          <a href="acura.html">
-            <img src="http://dl.dropbox.com/u/993132/eu.jpg" />
-		    <h3>Arthur Granado</h3>
-          </a>
-        </li>
-        <li>
-          <a href="acura.html">
-            <img src="http://dl.dropbox.com/u/993132/eu.jpg" />
-		    <h3>Arthur Granado</h3>
-          </a>
-        </li>
-        <li>
-          <a href="acura.html">
-            <img src="http://dl.dropbox.com/u/993132/eu.jpg" />
-		    <h3>Arthur Granado</h3>
-          </a>
-        </li>
-        <li>
-          <a href="acura.html">
-            <img src="http://dl.dropbox.com/u/993132/eu.jpg" />
-		    <h3>Arthur Granado</h3>
-          </a>
-        </li>
-        <li>
-          <a href="acura.html">
-            <img src="http://dl.dropbox.com/u/993132/eu.jpg" />
-		    <h3>Arthur Granado</h3>
-          </a>
-        </li>
-        <li>
-          <a href="acura.html">
-            <img src="http://dl.dropbox.com/u/993132/eu.jpg" />
-		    <h3>Arthur Granado</h3>
-          </a>
-        </li>
+      <% end %>
     </ul>
 </div><!-- /content -->
