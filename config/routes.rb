@@ -1,4 +1,18 @@
 Carnaval2012::Application.routes.draw do
+  get "page/auth"
+
+  get "page/home"
+
+  get "page/blocos"
+
+  get "page/bloco"
+
+  get "page/friends"
+
+  get "page/maps"
+
+  get "page/schedule"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
