@@ -10,8 +10,24 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+    <div data-role="page">
 
-<%= yield %>
+        <div data-role="header" data-position="fixed" data-add-back-btn="true" data-back-btn-text="voltar">
+            <h1>Carnaval (Alpha)</h1>
+        </div><!-- /header -->
 
+            <%= yield %>
+
+        <div data-role="footer" data-position="fixed">
+            <div data-role="navbar">
+              <ul>
+                  <li><%= link_to 'Sua Lista', home_path %></li>
+                  <li><%= link_to 'Amigos', friends_path %></li>
+                  <li><%= link_to 'Mapa', '#' %></li>
+                  <li><%= link_to 'Blocos', '#' %></li>
+              </ul>
+            </div><!-- /navbar -->
+        </div>
+    </div><!-- /page -->
 </body>
 </html>
