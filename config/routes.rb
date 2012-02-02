@@ -1,4 +1,10 @@
 Carnaval2012::Application.routes.draw do
+  get "sessions/create"
+
+  get "sessions/failure"
+
+  get "sessions/destroy"
+
   get "page/auth"
 
   get "page/home"
@@ -17,6 +23,9 @@ Carnaval2012::Application.routes.draw do
   match '/', :to => 'page#home'
   match '/friends', :to => 'page#friends'
   match '/home', :to => 'page#home'
+
+  match '/auth/:provider/callback', :to => 'sessions#create'
+  match '/auth/failure', :to => 'sessions#failure'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

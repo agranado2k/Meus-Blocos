@@ -16,6 +16,11 @@ group :test do
   gem 'webrat'
 end
 
+#facebook
+gem 'omniauth'
+gem 'omniauth-facebook'
+gem 'fb_graph'
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do

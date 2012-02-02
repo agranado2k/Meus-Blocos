@@ -29,8 +29,10 @@ GEM
       activesupport (= 3.1.3)
     activesupport (3.1.3)
       multi_json (~> 1.0)
+    addressable (2.2.6)
     ansi (1.4.2)
     arel (2.2.1)
+    attr_required (0.0.3)
     builder (3.0.0)
     coffee-rails (3.1.1)
       coffee-script (>= 2.2.0)
@@ -43,7 +45,16 @@ GEM
     erubis (2.7.0)
     execjs (1.3.0)
       multi_json (~> 1.0)
+    faraday (0.7.6)
+      addressable (~> 2.2)
+      multipart-post (~> 1.1)
+      rack (~> 1.1)
+    fb_graph (2.3.1)
+      httpclient (>= 2.2.0.2)
+      rack-oauth2 (>= 0.9.4)
+    hashie (1.2.0)
     hike (1.2.1)
+    httpclient (2.2.4)
     i18n (0.6.0)
     jquery-rails (1.0.19)
       railties (~> 3.0)
@@ -55,13 +66,32 @@ GEM
       treetop (~> 1.4.8)
     mime-types (1.17.2)
     multi_json (1.0.4)
+    multipart-post (1.1.4)
     nokogiri (1.5.0)
+    oauth2 (0.5.2)
+      faraday (~> 0.7)
+      multi_json (~> 1.0)
+    omniauth (1.0.2)
+      hashie (~> 1.2)
+      rack
+    omniauth-facebook (1.2.0)
+      omniauth-oauth2 (~> 1.0.0)
+    omniauth-oauth2 (1.0.0)
+      oauth2 (~> 0.5.0)
+      omniauth (~> 1.0)
     polyglot (0.3.3)
     rack (1.3.6)
     rack-cache (1.1)
       rack (>= 0.4)
     rack-mount (0.8.3)
       rack (>= 1.0.0)
+    rack-oauth2 (0.13.0)
+      activesupport (>= 2.3)
+      attr_required (>= 0.0.3)
+      httpclient (>= 2.2.0.2)
+      i18n
+      json (>= 1.4.3)
+      rack (>= 1.1)
     rack-ssl (1.3.2)
       rack
     rack-test (0.6.1)
@@ -129,7 +159,10 @@ PLATFORMS
 
 DEPENDENCIES
   coffee-rails (~> 3.1.1)
+  fb_graph
   jquery-rails
+  omniauth
+  omniauth-facebook
   rails (= 3.1.3)
   rspec-rails
   sass-rails (~> 3.1.5)
