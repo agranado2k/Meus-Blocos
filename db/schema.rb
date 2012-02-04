@@ -11,13 +11,25 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120202052832) do
+ActiveRecord::Schema.define(:version => 20120203043601) do
 
   create_table "authorizations", :force => true do |t|
     t.string   "provider"
     t.string   "uid"
     t.string   "access_token"
     t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "blocos", :force => true do |t|
+    t.string   "name"
+    t.string   "venue"
+    t.string   "latitude"
+    t.string   "longitude"
+    t.date     "date"
+    t.string   "hour"
+    t.string   "photo_url"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

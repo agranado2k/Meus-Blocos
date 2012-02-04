@@ -5,3 +5,4 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+    blocos = Bloco.create([{name: 'Tá Doido?',venue: 'Perto daqui',latitude:'',longitude: '', date: '2012-02-22', hour:'18hs'}])

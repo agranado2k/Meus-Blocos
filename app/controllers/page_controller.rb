@@ -3,12 +3,25 @@ class PageController < ApplicationController
   end
 
   def home
+    if !session[:access_token]
+        redirect_to auth_path
+    end
   end
 
   def blocos
+    if !session[:access_token]
+        redirect_to auth_path
+    end
+
+    @blocos = Bloco.all
   end
 
   def bloco
+    if !session[:access_token]
+        redirect_to auth_path
+    end
+
+    @bloco = Bloco.find(params[:id])
   end
 
   def friends
@@ -19,9 +32,15 @@ class PageController < ApplicationController
   end
 
   def maps
+    if !session[:access_token]
+        redirect_to auth_path
+    end
   end
 
   def schedule
+    if !session[:access_token]
+        redirect_to auth_path
+    end
   end
 
 end

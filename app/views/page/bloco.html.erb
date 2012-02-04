@@ -1,2 +1,14 @@
-<h1>Page#bloco</h1>
-<p>Find me in app/views/page/bloco.html.erb</p>
+
+	<div data-role="content">
+		<h1><%= @bloco.name %></h1>
+        <div>
+          <img href="<%= @bloco.photo_url %>" />
+        </div>
+        <div>
+          <p>Local:</p>
+          <p><%= @bloco.venue %></p>
+        </div>
+        <div>
+          <p>Dia:<%= @bloco.date %> Horário:<%= @bloco.hour %></p>
+        </div>
+	</div><!-- /content -->

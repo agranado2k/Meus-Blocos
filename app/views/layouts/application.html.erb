@@ -3,31 +3,37 @@
 <head>
   <title>Carnaval2012</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.css" />
-  <script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
-  <script src="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.js"></script>
 
+  <% if session[:access_token] %>
+      <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.css" />
+      <script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+      <script src="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.js"></script>
+  <% end %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-    <div data-role="page">
+    <% if session[:access_token] %>
+        <div data-role="page" data-add-back-btn="true" data-back-btn-text="voltar" data-rel="back">
 
-        <div data-role="header" data-position="fixed" data-add-back-btn="true" data-back-btn-text="voltar">
-            <h1>Carnaval (Alpha)</h1>
-        </div><!-- /header -->
+            <div data-role="header" data-position="fixed" >
+                <h1>Meus Blocos (Alpha)</h1>
+            </div><!-- /header -->
+    <% end %>
 
             <%= yield %>
 
-        <div data-role="footer" data-position="fixed">
-            <div data-role="navbar">
-              <ul>
-                  <li><%= link_to 'Sua Lista', home_path %></li>
-                  <li><%= link_to 'Amigos', friends_path %></li>
-                  <li><%= link_to 'Mapa', '#' %></li>
-                  <li><%= link_to 'Blocos', '#' %></li>
-              </ul>
-            </div><!-- /navbar -->
-        </div>
-    </div><!-- /page -->
+    <% if session[:access_token] %>
+            <div data-role="footer" data-position="fixed">
+                <div data-role="navbar">
+                  <ul>
+                      <li><%= link_to 'Sua Lista', home_path %></li>
+                      <li><%= link_to 'Amigos', friends_path %></li>
+                      <li><%= link_to 'Blocos', blocos_path %></li>
+                      <li><%= link_to 'About', maps_path %></li>
+                  </ul>
+                </div><!-- /navbar -->
+            </div>
+        </div><!-- /page -->
+    <% end %>
 </body>
 </html>
