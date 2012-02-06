@@ -24,7 +24,7 @@ class PageController < ApplicationController
     end
     @user_id = session[:user_id]
     @bloco = Bloco.find(params[:id])
-    @t = @bloco->with('user').find(params[session[:user_id]])
+    #@t = @bloco->with('user').find(params[session[:user_id]])
   end
 
   def friends
