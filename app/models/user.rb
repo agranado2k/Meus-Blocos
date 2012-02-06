@@ -1,5 +1,8 @@
 class User < ActiveRecord::Base
+  attr_accessible :name, :email
   has_many :authorizations
+  has_many :my_blocos
+  has_many :blocos, :through => :my_blocos
   validates :name, :email, :presence => true
 
   def add_provider(auth_hash)
