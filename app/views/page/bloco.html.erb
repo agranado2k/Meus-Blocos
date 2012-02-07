@@ -11,5 +11,12 @@
         <div>
           <p>Dia:<%= @bloco.date %> Horário:<%= @bloco.hour %></p>
         </div>
-        <a href="/join/<%= @user_id %>/<%= @bloco.id %>" >Eu vou</a>
+        <% if @needToGo %>
+            <a href="/join/<%= @user_id %>/<%= @bloco.id %>" >Eu vou</a>
+        <% else %>
+            <a href="/disconnect/<%= @user_id %>/<%= @bloco.id %>" >Não vou</a>
+        <% end %>
+        <% @friends_in_bloco.each do |friend| %>
+            <img src="<%= friend[:pic_small] %>" alt="<%= friend[:name] %>"/>
+        <% end %>
 	</div><!-- /content -->

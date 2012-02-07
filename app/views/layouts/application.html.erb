@@ -26,7 +26,7 @@
             <div data-role="footer" data-position="fixed">
                 <div data-role="navbar">
                   <ul>
-                      <li><%= link_to 'Sua Lista', home_path %></li>
+                      <li><%= link_to 'Sua Lista', home_path(session[:user_id]) %></li>
                       <li><%= link_to 'Amigos', friends_path %></li>
                       <li><%= link_to 'Blocos', blocos_path %></li>
                       <li><%= link_to 'About', maps_path %></li>

@@ -1,10 +1,10 @@
 <div data-role="content">
     <ul data-role="listview" data-theme="g" data-filter="true">
-      <% @fb_user.friends.each do |friend| %>
+      <% @friends.each do |friend|  %>
         <li>
-          <a href="#">
-            <img src="<%= friend.picture %>" />
-		    <h3><%= friend.name %></h3>
+          <a href="/home/<%= friend[:uid] %>">
+            <img src="<%= friend[:pic_small] %>" />
+		    <h3><%= friend[:name] %></h3>
           </a>
         </li>
         <li>

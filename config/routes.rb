@@ -21,13 +21,15 @@ Carnaval2012::Application.routes.draw do
 
   root :to => "page#home"
   match '/', :to => 'page#home'
-  match '/home', :to => 'page#home'
+  match '/home/:id', :to => 'page#home'
+  match '/home/', :to => 'page#home'
   match '/friends', :to => 'page#friends'
   match '/auth', :to => 'page#auth'
   match '/maps', :to => 'page#maps'
   match '/blocos', :to => 'page#blocos'
   match '/bloco/:id', :to => 'page#bloco'
   match '/join/:user_id/:bloco_id', :to => 'page#join_user_and_bloco'
+  match '/disconnect/:user_id/:bloco_id', :to => 'page#disconnect_user_and_bloco'
 
   match '/auth/:provider/callback', :to => 'sessions#create'
   match '/auth/failure', :to => 'sessions#failure'

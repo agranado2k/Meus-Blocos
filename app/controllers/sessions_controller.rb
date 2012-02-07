@@ -4,10 +4,10 @@ class SessionsController < ApplicationController
 
     @auth = Authorization.find_or_create(auth_hash)
     if @auth
-      session[:user_id] = @auth.user_id
+      session[:user_id] = @auth.uid
       session[:access_token] = @auth.access_token
     else
-      User.find(session[:user_id]).add_provider(auth_hash)
+      User.find_by_uid(session[:user_id]).add_provider(auth_hash)
     end
 
     redirect_to root_path
