@@ -1,13 +1,21 @@
 <div data-role="content">
     <ul data-role="listview" data-theme="g" data-filter="true">
-      <% @friends.each do |friend|  %>
-        <li>
-          <a href="/home/<%= friend[:uid] %>">
-            <img src="<%= friend[:pic_small] %>" />
-		    <h3 class="amigo"><%= friend[:name] %></h3>
-          </a>
-        </li>
-        <li>
+      <% !@friends.nil? && friends.length >=1 %>
+          <% @friends.each do |friend|  %>
+            <li>
+              <a href="/home/<%= friend[:uid] %>">
+                <img src="<%= friend[:pic_small] %>" />
+                <h3 class="amigo"><%= friend[:name] %></h3>
+              </a>
+            </li>
+            <li>
+          <% end %>
+      <% else %>
+             <div id="vazio">
+               <center><%= image_tag "alone.png" %></center>
+                    <p>Nenhum amigo seu usou o aplicativo até o momento.</p>
+
+            </div>
       <% end %>
     </ul>
 </div><!-- /content -->

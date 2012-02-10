@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(:version => 20120206020430) do
     t.string   "provider"
     t.string   "uid"
     t.string   "access_token"
-    t.integer  "user_id"
+    t.integer  "user_id",      :limit => 8
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -38,7 +38,7 @@ ActiveRecord::Schema.define(:version => 20120206020430) do
   end
 
   create_table "my_blocos", :force => true do |t|
-    t.integer  "user_id"
+    t.integer  "user_id",    :limit => 8
     t.integer  "bloco_id"
     t.datetime "created_at"
     t.datetime "updated_at"
