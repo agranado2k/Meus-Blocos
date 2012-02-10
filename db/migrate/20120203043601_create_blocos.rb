@@ -8,6 +8,9 @@ class CreateBlocos < ActiveRecord::Migration
       t.date :date
       t.string :hour
       t.string :photo_url
+      t.string :way, :limit => 2.megabytes
+      t.string :map, :limit => 2.megabytes
+      t.string :neighbor
 
       t.timestamps
     end
