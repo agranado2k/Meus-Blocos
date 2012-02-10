@@ -7,5 +7,5 @@ test:
   secret_key: d2ad853cb6863db853ebbabdddf20783
 
 production:
-  app_id: 136023789849605
-  secret_key: 34a1daaa422bf769611bed84bc9e09a8
+  app_id: 184578124980457
+  secret_key: 2be19f10c8c405bb1cc60f9d5205d9aa
