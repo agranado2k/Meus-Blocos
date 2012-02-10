@@ -4,7 +4,7 @@ class CreateAuthorizations < ActiveRecord::Migration
       t.string :provider
       t.string :uid
       t.string :access_token
-      t.integer :user_id
+      t.integer :user_id, :limit => 8
 
       t.timestamps
     end
