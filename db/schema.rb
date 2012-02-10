@@ -32,9 +32,9 @@ ActiveRecord::Schema.define(:version => 20120210110856) do
     t.string   "photo_url"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.text     "map",        :limit => 255
+    t.text     "map",        :limit => 1000
     t.string   "neighbor"
-    t.text     "way",        :limit => 255
+    t.text     "way",        :limit => 1000
   end
 
   create_table "my_blocos", :force => true do |t|
