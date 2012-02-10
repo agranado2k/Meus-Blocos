@@ -1,4 +1,7 @@
 class PageController < ApplicationController
+
+  FB_APP_ID = YAML.load_file(Rails.root.join("config/facebook.yml"))[Rails.env]['app_id']
+
   def auth
   end
 
@@ -67,16 +70,14 @@ class PageController < ApplicationController
   end
 
   def join_user_and_bloco
-    if !session[:access_token]
-        redirect_to auth_path
-    end
+    redirect_to auth_path and return unless session[:access_token]
 
     user_id = params[:user_id]
     bloco_id = params[:bloco_id]
 
     my_bloco = MyBloco.new({:user_id => user_id, :bloco_id => bloco_id})
     my_bloco.save
-    redirect_to home_path
+    redirect_to "/bloco/#{bloco_id}"
   end
 
   def disconnect_user_and_bloco
@@ -89,7 +90,7 @@ class PageController < ApplicationController
 
     my_bloco = MyBloco.find_by_user_id_and_bloco_id(user_id,bloco_id)
     my_bloco.destroy
-    redirect_to home_path
+    redirect_to "/bloco/#{bloco_id}"
   end
 
   def post_on_facebook

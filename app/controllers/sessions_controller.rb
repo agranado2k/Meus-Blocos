@@ -20,7 +20,7 @@ class SessionsController < ApplicationController
   def destroy
     session[:user_id] = nil
     session[:access_token] = nil
-    redirect_to home_path
+    redirect_to home_path, :anchor => ''
   end
 
 end
