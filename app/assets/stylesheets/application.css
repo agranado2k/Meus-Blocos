@@ -108,9 +108,9 @@
 
     h1{font-size: 30px;}
 
-    .img-bloco{ -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; width: 365px}
+    .img-bloco{ -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; width: 470px}
 
-    .bt-ir, .bt-nao-ir{-webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; padding:  10px 5px; display: block; float: left; background: red; width: 355px; text-align: center; color:#fff !important; text-shadow: none; text-decoration: none; font-weight: normal !important;  background-image: -o-linear-gradient(bottom, rgb(23,80,166) 3%, rgb(24,158,247) 52%);
+    .bt-ir, .bt-nao-ir{-webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; padding:  10px 5px; display: block; float: left; background: red; width: 460px; text-align: center; color:#fff !important; text-shadow: none; text-decoration: none; font-weight: normal !important;  background-image: -o-linear-gradient(bottom, rgb(23,80,166) 3%, rgb(24,158,247) 52%);
     background-image: -moz-linear-gradient(bottom, rgb(23,80,166) 3%, rgb(24,158,247) 52%);
     background-image: -webkit-linear-gradient(bottom, rgb(23,80,166) 3%, rgb(24,158,247) 52%);}
 

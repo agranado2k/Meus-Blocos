@@ -1,6 +1,6 @@
 <div data-role="content">
     <ul data-role="listview" data-theme="g" data-filter="true">
-      <% !@friends.nil? && friends.length >=1 %>
+      <% if !@friends.nil? && @friends.length >=1 %>
           <% @friends.each do |friend|  %>
             <li>
               <a href="/home/<%= friend[:uid] %>">
