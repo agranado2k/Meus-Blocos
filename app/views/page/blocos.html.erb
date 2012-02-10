@@ -2,7 +2,7 @@
     <ul data-role="listview" data-theme="g" data-filter="true">
       <% yesterday = Date.yesterday; @blocos.each do |bloco| %>
           <% if bloco.date > yesterday %>
-            <li data-role="list-divider"><%= bloco.date.to_formatted_s :format => :long %></li>
+            <li data-role="list-divider"><%= format_date bloco.date %></li>
           <% yesterday = bloco.date; end %>
 			<li>
                <a href="/bloco/<%= bloco.id %>">

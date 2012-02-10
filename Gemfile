@@ -18,6 +18,8 @@ group :test do
   gem 'webrat'
 end
 
+gem 'rails-i18n'
+
 #facebook
 gem 'omniauth'
 gem 'omniauth-facebook'
