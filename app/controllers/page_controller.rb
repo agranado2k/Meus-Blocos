@@ -9,7 +9,7 @@ class PageController < ApplicationController
 
     user_uid = params[:id] unless params[:id].nil?
 
-    @my_blocos = Bloco.find(:all, :joins => :my_blocos, :conditions => ['my_blocos.user_id = ?',user_uid])
+    @my_blocos = Bloco.find(:all, :order => 'date', :joins => :my_blocos, :conditions => ['my_blocos.user_id = ?',user_uid])
   end
 
   def blocos
@@ -17,7 +17,7 @@ class PageController < ApplicationController
         redirect_to auth_path
     end
 
-    @blocos = Bloco.all
+    @blocos = Bloco.find(:all, :order => 'date')
   end
 
   def bloco
@@ -48,6 +48,13 @@ class PageController < ApplicationController
   end
 
   def maps
+    if !session[:access_token]
+        redirect_to auth_path
+    end
+    @bloco = Bloco.find(params[:bloco_id])
+  end
+
+  def about
     if !session[:access_token]
         redirect_to auth_path
     end

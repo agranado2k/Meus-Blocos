@@ -1,11 +1,14 @@
 <div data-role="content">
     <ul data-role="listview" data-theme="g" data-filter="true">
-      <% @blocos.each do |bloco| %>
-        <!--<li data-role="list-divider"><span class="ui-li-count">3</span></li>-->
+      <% yesterday = Date.yesterday; @blocos.each do |bloco| %>
+          <% if bloco.date >= yesterday %>
+            <li data-role="list-divider"><%= bloco.date.to_datetime %></li>
+          <% yesterday = bloco.date; end %>
 			<li>
                <a href="/bloco/<%= bloco.id %>">
+                    <img src="<%= bloco.photo_url %>" />
 					<h3><%= bloco.name %></h3>
-					<p><strong><%= bloco.venue %></strong></p>
+					<p><%= bloco.neighbor %></p>
 					<p class="ui-li-aside"><strong><%= bloco.hour %></strong></p>
                </a>
             </li>

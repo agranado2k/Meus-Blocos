@@ -1,16 +1,15 @@
 
 	<div data-role="content">
 		<h1><%= @bloco.name %></h1>
+          <img src="<%= @bloco.photo_url %>" />
         <div>
-          <img href="<%= @bloco.photo_url %>" />
-        </div>
-        <div>
-          <p>Local:</p>
-          <p><%= @bloco.venue %></p>
+          <p>Local: <%= @bloco.venue %></p>
+          <p>Bairro: <%= @bloco.neighbor %></p>
         </div>
         <div>
           <p>Dia:<%= @bloco.date %> Horário:<%= @bloco.hour %></p>
         </div>
+        <a href="/map/<%= @bloco.id %>">Mapa</a>
         <% if @needToGo %>
             <a href="/join/<%= @user_id %>/<%= @bloco.id %>" >Eu vou</a>
         <% else %>
