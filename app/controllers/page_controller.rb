@@ -1,4 +1,7 @@
 class PageController < ApplicationController
+
+  FB_APP_ID = YAML.load_file(Rails.root.join("config/facebook.yml"))[Rails.env]['app_id']
+
   def auth
   end
 

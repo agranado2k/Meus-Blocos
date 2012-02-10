@@ -1,5 +1,13 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
-  FB_APP_ID = YAML.load_file(Rails.root.join("config/facebook.yml"))[Rails.env]['app_id']
+  APP_DOMAIN = 'www.meus-blocos.com.br'
+
+  def ensure_domain
+      if request.env['HTTP_HOST'] != APP_DOMAIN
+         # HTTP 301 is a "permanent" redirect
+         redirect_to "http://#{APP_DOMAIN}", :status => 301
+      end
+  end
+
 end
