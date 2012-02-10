@@ -1,20 +1,20 @@
 
 	<div data-role="content">
 		<h1><%= @bloco.name %></h1>
-          <img src="<%= @bloco.photo_url %>" />
+          <img src="<%= @bloco.photo_url %>" class="img-bloco" />
         <div>
-          <p>Local: <%= @bloco.venue %></p>
-          <p>Local: <%= @bloco.way %></p>
-          <p>Bairro: <%= @bloco.neighbor %></p>
+          <p><strong>Local:</strong> <%= @bloco.venue %> - <a href="/map/<%= @bloco.id %>" class="mapa">Ver no Mapa</a></p>
+          <p><strong>Percurso:</strong> <%= @bloco.way %></p>
+          <p><strong>Bairro:</strong> <%= @bloco.neighbor %></p>
         </div>
         <div>
-          <p>Dia:<%= @bloco.date %> Horário:<%= @bloco.hour %></p>
+          <p><strong>Dia</strong>: <%= @bloco.date %> <strong>Horário:</strong> <%= @bloco.hour %></p>
         </div>
-        <a href="/map/<%= @bloco.id %>">Mapa</a>
+
         <% if @needToGo %>
-            <a href="/join/<%= @user_id %>/<%= @bloco.id %>" >Eu vou</a>
+            <a href="/join/<%= @user_id %>/<%= @bloco.id %>" class="bt-ir">Eu vou! :)</a>
         <% else %>
-            <a href="/disconnect/<%= @user_id %>/<%= @bloco.id %>" >Não vou</a>
+            <a href="/disconnect/<%= @user_id %>/<%= @bloco.id %>" class="bt-nao-ir" >Não vou mais :(</a>
         <% end %>
         <% @friends_in_bloco.each do |friend| %>
             <img src="<%= friend[:pic_small] %>" alt="<%= friend[:name] %>"/>

@@ -5,3 +5,54 @@
  *= require_self
  *= require_tree . 
 */
+
+.ui-header{background: url('bg-copacabana.jpg');}
+
+.ui-header .ui-title, .ui-footer .ui-title{margin:  0;}
+.ui-title img{position: relative; top: 10px; z-index: 999;}
+
+.ui-header .ui-title, .ui-footer .ui-title{overflow:  visible;}
+.ui-header, .ui-footer, .ui-page-fullscreen .ui-header, .ui-page-fullscreen .ui-footer{overflow: visible;}
+
+.ui-header .ui-btn-left{top: 16px;}
+
+.wrapper{text-align: center; padding: 10px; font-family: arial, helvetica, sans-serif;}
+.wrapper h1{text-indent: -9999px; width: 290px; height: 168px; background: url("meus-blocos.png"); margin:  0 auto 35px;}
+
+#auth{display: inline-block; padding:  10px; background: #fff; border: 1px solid #9e9e9e; -webkit-border-radius: 10px; -moz-border-radius: 10px; border-radius: 10px;}
+#auth h2{font-size: 19px; margin: 0;}
+#auth h3{font-size: 14px; font-weight: normal; color: #3c3c3c; }
+#facebook-connect a{background: url('bt-facebook.gif'); margin: 0 auto;  display: block; width: 260px; height: 43px; text-indent: -9999px;}
+
+a.facebook-share{ -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; font-size: 15px; display: block; text-align: center; padding: 14px 5px 13px; margin: 15px 10px 15px; background: #2c597c; color:#fff !important; text-shadow: 0 1px 1px #666; text-decoration:none; font-weight: normal !important; background-image: linear-gradient(bottom, rgb(41,86,121) 23%, rgb(84,129,164) 73%);
+background-image: -o-linear-gradient(bottom, rgb(41,86,121) 23%, rgb(84,129,164) 73%);
+background-image: -moz-linear-gradient(bottom, rgb(41,86,121) 23%, rgb(84,129,164) 73%);
+background-image: -webkit-linear-gradient(bottom, rgb(41,86,121) 23%, rgb(84,129,164) 73%);
+background-image: -ms-linear-gradient(bottom, rgb(41,86,121) 23%, rgb(84,129,164) 73%);}
+
+.ui-li-aside{margin: 16px 30px 0; font-size: 14px;  padding: 5px; background: #ccc; border:  1px solid #e1e1e1; width: auto; -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px;}
+
+.ui-li-thumb, .ui-listview .ui-li-icon{left: 8px; top: 12px; -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; }
+
+.ui-li, .ui-li.ui-field-contain{border-color: #ccc; }
+
+h3.amigo{margin:  20px 0 0 -15px;}
+
+
+h1{font-size: 30px;}
+
+.img-bloco{ -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; width: 365px}
+
+.bt-ir, .bt-nao-ir{-webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; padding:  10px 5px; display: block; float: left; background: red; width: 355px; text-align: center; color:#fff !important; text-shadow: none; text-decoration: none; font-weight: normal !important;  background-image: -o-linear-gradient(bottom, rgb(23,80,166) 3%, rgb(24,158,247) 52%);
+background-image: -moz-linear-gradient(bottom, rgb(23,80,166) 3%, rgb(24,158,247) 52%);
+background-image: -webkit-linear-gradient(bottom, rgb(23,80,166) 3%, rgb(24,158,247) 52%);}
+
+.bt-nao-ir{background-image: linear-gradient(bottom, rgb(143,41,41) 3%, rgb(227,61,92) 52%);
+background-image: -o-linear-gradient(bottom, rgb(143,41,41) 3%, rgb(227,61,92) 52%);
+background-image: -moz-linear-gradient(bottom, rgb(143,41,41) 3%, rgb(227,61,92) 52%);
+background-image: -webkit-linear-gradient(bottom, rgb(143,41,41) 3%, rgb(227,61,92) 52%);
+background-image: -ms-linear-gradient(bottom, rgb(143,41,41) 3%, rgb(227,61,92) 52%);}
+
+
+#vazio{padding:  5px 15px;}
+#vazio p{color:#999; text-shadow: 0 1px 1px #fff; font-weight:bold; font-size: 17px; text-align: center; margin-bottom: 30px}
