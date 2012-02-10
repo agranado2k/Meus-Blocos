@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120210040658) do
+ActiveRecord::Schema.define(:version => 20120210110856) do
 
   create_table "authorizations", :force => true do |t|
     t.string   "provider"
@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(:version => 20120210040658) do
     t.datetime "updated_at"
     t.text     "map",        :limit => 255
     t.string   "neighbor"
-    t.string   "way"
+    t.text     "way",        :limit => 255
   end
 
   create_table "my_blocos", :force => true do |t|
