@@ -86,7 +86,7 @@ class PageController < ApplicationController
     me = FbGraph::User.me(session[:access_token])
     me.feed!(
       :message => "Acabo de criar o meu roteiro dos blocos de rua desse carnaval! Clique aqui para ver o meu e fazer o seu!",
-      :picture =>  (image_tag "meus-blocos.png"),
+      :picture =>  image_path("meus-blocos.png"),
       :link => "http://www.meus-blocos.com.br/#{session[:user_id]}",
       :name => 'Meus Blocos 2012',
       :description => "Crie e compartilhe com os seus amigos o seu roteiro da folia nesse carnaval de rua do Rio de Janeiro!"
