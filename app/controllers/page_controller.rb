@@ -6,27 +6,23 @@ class PageController < ApplicationController
   end
 
   def home
-    redirect_to auth_path unless session[:access_token]
+    redirect_to auth_path and return unless session[:access_token]
 
     user_uid = session[:user_id] if session[:user_id]
-
     user_uid = params[:id] unless params[:id].nil?
 
     @my_blocos = Bloco.find(:all, :order => 'date', :joins => :my_blocos, :conditions => ['my_blocos.user_id = ?',user_uid])
   end
 
   def blocos
-    if !session[:access_token]
-        redirect_to auth_path
-    end
+    redirect_to auth_path and return unless session[:access_token]
 
     @blocos = Bloco.find(:all, :order => 'date', :conditions => ["date >= ?", Date.today])
   end
 
   def bloco
-    if !session[:access_token]
-        redirect_to auth_path
-    end
+    redirect_to auth_path and return unless session[:access_token]
+
     @friends_in_bloco = []
     @user_id = session[:user_id]
     @bloco = Bloco.find(params[:id])
@@ -38,7 +34,6 @@ class PageController < ApplicationController
     end
 
     @needToGo = MyBloco.find_by_user_id_and_bloco_id(session[:user_id], @bloco.id).nil?
-
   end
 
   def friends
@@ -51,22 +46,16 @@ class PageController < ApplicationController
   end
 
   def maps
-    if !session[:access_token]
-        redirect_to auth_path
-    end
+    redirect_to auth_path and return unless session[:access_token]
     @bloco = Bloco.find(params[:bloco_id])
   end
 
   def about
-    if !session[:access_token]
-        redirect_to auth_path
-    end
+    redirect_to auth_path unless session[:access_token]
   end
 
   def schedule
-    if !session[:access_token]
-        redirect_to auth_path
-    end
+    redirect_to auth_path unless session[:access_token]
   end
 
   def join_user_and_bloco
@@ -77,26 +66,23 @@ class PageController < ApplicationController
 
     my_bloco = MyBloco.new({:user_id => user_id, :bloco_id => bloco_id})
     my_bloco.save
-    redirect_to "/bloco/#{bloco_id}"
+    redirect_to bloco_path(my_bloco.bloco)
   end
 
   def disconnect_user_and_bloco
-    if !session[:access_token]
-        redirect_to auth_path
-    end
+    redirect_to auth_path and return unless session[:access_token]
 
     user_id = params[:user_id]
     bloco_id = params[:bloco_id]
 
     my_bloco = MyBloco.find_by_user_id_and_bloco_id(user_id,bloco_id)
     my_bloco.destroy
-    redirect_to "/bloco/#{bloco_id}"
+    redirect_to bloco_path(my_bloco.bloco)
   end
 
   def post_on_facebook
-    if !session[:access_token]
-        redirect_to auth_path
-    end
+    redirect_to auth_path and return unless session[:access_token]
+
     me = FbGraph::User.me(session[:access_token])
     me.feed!(
       :message => "Acabo de criar o meu roteiro dos blocos de rua desse carnaval! Clique aqui para ver o meu e fazer o seu!",
