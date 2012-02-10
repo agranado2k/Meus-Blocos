@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120207011759) do
+ActiveRecord::Schema.define(:version => 20120209012215) do
 
   create_table "authorizations", :force => true do |t|
     t.string   "provider"
@@ -32,6 +32,9 @@ ActiveRecord::Schema.define(:version => 20120207011759) do
     t.string   "photo_url"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "map"
+    t.string   "neighbor"
+    t.string   "way"
   end
 
   create_table "my_blocos", :force => true do |t|
