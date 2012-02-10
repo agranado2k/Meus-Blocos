@@ -17,7 +17,7 @@ class PageController < ApplicationController
         redirect_to auth_path
     end
 
-    @blocos = Bloco.find(:all, :order => 'date')
+    @blocos = Bloco.find(:all, :order => 'date', :conditions => ["date >= ?", Date.today])
   end
 
   def bloco
@@ -89,6 +89,22 @@ class PageController < ApplicationController
 
     my_bloco = MyBloco.find_by_user_id_and_bloco_id(user_id,bloco_id)
     my_bloco.destroy
+    redirect_to home_path
+  end
+
+  def post_on_facebook
+    if !session[:access_token]
+        redirect_to auth_path
+    end
+    me = FbGraph::User.me(session[:access_token])
+    me.feed!(
+      :message => "Galera! Usem o Meus Blocos e criem sua lista de blocos para o carnaval 2012! Eu  fiz a minha, venha ve-la!!!",
+      :picture => 'http://vocedeolhoemtudo.com.br/wp-content/gallery/blocos-de-carnaval/blocos-de-carnaval-7.jpg',
+      :link => 'https://apps.facebook.com/meus-blocos/',
+      :name => 'Meus Blocos',
+      :description => "Venha fazer sua lista de Blocos para o Carnaval 2012"
+    )
+
     redirect_to home_path
   end
 

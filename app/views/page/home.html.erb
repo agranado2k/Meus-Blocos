@@ -1,4 +1,7 @@
 <div data-role="content">
+    <% if params[:id].nil? %>
+        <%= link_to "Compartilhar no Facebook", post_path %>
+    <% end %>
     <ul data-role="listview" data-theme="g" data-filter="true">
       <% yesterday = Date.yesterday; @my_blocos.each do |bloco| %>
           <% if bloco.date >= yesterday %>
