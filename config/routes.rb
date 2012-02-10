@@ -1,24 +1,14 @@
 Carnaval2012::Application.routes.draw do
   get "sessions/create"
-
   get "sessions/failure"
-
   get "sessions/destroy"
-
   get "page/auth"
-
   get "page/home"
-
   get "page/blocos"
-
   get "page/bloco"
-
   get "page/friends"
-
   get "page/maps"
-
   get "page/about"
-
   get "page/schedule"
 
   root :to => "page#home"
@@ -31,7 +21,7 @@ Carnaval2012::Application.routes.draw do
   match '/map/:bloco_id', :to => 'page#maps'
   match '/about', :to => 'page#about'
   match '/blocos', :to => 'page#blocos'
-  match '/bloco/:id', :to => 'page#bloco'
+  match '/bloco/:id', :to => 'page#bloco', :as => 'bloco'
   match '/join/:user_id/:bloco_id', :to => 'page#join_user_and_bloco'
   match '/post/', :to => 'page#post_on_facebook'
   match '/disconnect/:user_id/:bloco_id', :to => 'page#disconnect_user_and_bloco'
