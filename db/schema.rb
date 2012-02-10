@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120209012215) do
+ActiveRecord::Schema.define(:version => 20120210040658) do
 
   create_table "authorizations", :force => true do |t|
     t.string   "provider"
@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(:version => 20120209012215) do
     t.string   "photo_url"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "map"
+    t.text     "map",        :limit => 255
     t.string   "neighbor"
     t.string   "way"
   end
