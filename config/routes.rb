@@ -22,6 +22,7 @@ Carnaval2012::Application.routes.draw do
   get "page/schedule"
 
   root :to => "page#home"
+  match '/#_=_', :to => 'page#home'
   match '/', :to => 'page#home'
   match '/home/:id', :to => 'page#home'
   match '/home/', :to => 'page#home'
