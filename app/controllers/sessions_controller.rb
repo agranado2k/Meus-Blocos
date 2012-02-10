@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
       User.find_by_uid(session[:user_id]).add_provider(auth_hash)
     end
 
-    redirect_to root_path
+    redirect_to home_path
   end
 
   def failure
@@ -20,7 +20,7 @@ class SessionsController < ApplicationController
   def destroy
     session[:user_id] = nil
     session[:access_token] = nil
-    redirect_to root_path
+    redirect_to home_path
   end
 
 end

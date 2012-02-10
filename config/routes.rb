@@ -33,6 +33,7 @@ Carnaval2012::Application.routes.draw do
   match '/blocos', :to => 'page#blocos'
   match '/bloco/:id', :to => 'page#bloco'
   match '/join/:user_id/:bloco_id', :to => 'page#join_user_and_bloco'
+  match '/post/', :to => 'page#post_on_facebook'
   match '/disconnect/:user_id/:bloco_id', :to => 'page#disconnect_user_and_bloco'
 
   match '/auth/:provider/callback', :to => 'sessions#create'
