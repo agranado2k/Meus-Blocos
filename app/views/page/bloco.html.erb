@@ -16,7 +16,11 @@
         <% else %>
             <a href="/disconnect/<%= @user_id %>/<%= @bloco.id %>" class="bt-nao-ir" >Não vou mais :(</a>
         <% end %>
-        <% @friends_in_bloco.each do |friend| %>
-            <img src="<%= friend[:pic_small] %>" alt="<%= friend[:name] %>"/>
-        <% end %>
+
+      <p style="clear:both; margin:  20px 0 10px; float: left; color:#666666; font-style: italic;">Veja quem você conhece que vai:</p>
+        <div id="amigos-no-bloco">
+            <% @friends_in_bloco.each do |friend| %>
+                <img src="<%= friend[:pic_small] %>" alt="<%= friend[:name] %>"/>
+            <% end %>
+        </div>
 	</div><!-- /content -->
