@@ -66,7 +66,7 @@ class PageController < ApplicationController
 
     my_bloco = MyBloco.new({:user_id => user_id, :bloco_id => bloco_id})
     my_bloco.save
-    redirect_to bloco_path(my_bloco.bloco)
+    redirect_to home_path
   end
 
   def disconnect_user_and_bloco
@@ -77,7 +77,7 @@ class PageController < ApplicationController
 
     my_bloco = MyBloco.find_by_user_id_and_bloco_id(user_id,bloco_id)
     my_bloco.destroy
-    redirect_to bloco_path(my_bloco.bloco)
+    redirect_to home_path
   end
 
   include ApplicationHelper
