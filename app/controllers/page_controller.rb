@@ -90,7 +90,7 @@ class PageController < ApplicationController
     me.feed!(
       :message => "Acabo de criar o meu roteiro dos blocos de rua desse carnaval! Clique aqui para ver o meu e fazer o seu!",
       :picture =>  "http://www.meus-blocos.com.br/assets/meus-blocos.png",
-      :link => "http://www.meus-blocos.com.br/#{session[:user_id]}",
+      :link => "http://www.meus-blocos.com.br/home/#{session[:user_id]}",
       :name => 'Meus Blocos 2012',
       :description => "Crie e compartilhe com os seus amigos o seu roteiro da folia nesse carnaval de rua do Rio de Janeiro!"
     )
