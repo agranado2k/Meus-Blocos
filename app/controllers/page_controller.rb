@@ -83,6 +83,8 @@ class PageController < ApplicationController
   def post_on_facebook
     redirect_to auth_path and return unless session[:access_token]
 
+    include ApplicationHelper
+
     me = FbGraph::User.me(session[:access_token])
     me.feed!(
       :message => "Acabo de criar o meu roteiro dos blocos de rua desse carnaval! Clique aqui para ver o meu e fazer o seu!",
