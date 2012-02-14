@@ -11,7 +11,7 @@ class PageController < ApplicationController
     user_uid = session[:user_id] if session[:user_id]
     user_uid = params[:id] unless params[:id].nil?
 
-    @my_blocos = Bloco.find(:all, :order => 'date', :joins => :my_blocos, :conditions => ['my_blocos.user_id = ?',user_uid])
+    @my_blocos = Bloco.find(:all, :order => 'date', :joins => :my_blocos, :conditions => ['my_blocos.user_id = ? and blocos.date >= ?',user_uid, Date.today])
   end
 
   def blocos
@@ -64,6 +64,8 @@ class PageController < ApplicationController
     user_id = params[:user_id]
     bloco_id = params[:bloco_id]
 
+
+
     my_bloco = MyBloco.new({:user_id => user_id, :bloco_id => bloco_id})
     my_bloco.save
     redirect_to home_path
@@ -83,8 +85,6 @@ class PageController < ApplicationController
   include ApplicationHelper
   def post_on_facebook
     redirect_to auth_path and return unless session[:access_token]
-
-
 
     me = FbGraph::User.me(session[:access_token])
     me.feed!(
