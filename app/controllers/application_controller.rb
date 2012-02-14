@@ -1,6 +1,8 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
+  before_filter :ensure_domain
+
   APP_DOMAIN = 'www.meus-blocos.com.br'
 
   def ensure_domain
@@ -9,5 +11,4 @@ class ApplicationController < ActionController::Base
          redirect_to "http://#{APP_DOMAIN}", :status => 301
       end
   end
-
 end
