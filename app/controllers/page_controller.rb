@@ -64,6 +64,7 @@ class PageController < ApplicationController
     user_id = params[:user_id]
     bloco_id = params[:bloco_id]
 
+    redirect_to home_path and return unless MyBloco.find_by_user_id_and_bloco_id(user_id,bloco_id).nil?
 
 
     my_bloco = MyBloco.new({:user_id => user_id, :bloco_id => bloco_id})
@@ -76,6 +77,8 @@ class PageController < ApplicationController
 
     user_id = params[:user_id]
     bloco_id = params[:bloco_id]
+
+    redirect_to home_path and return unless !MyBloco.find_by_user_id_and_bloco_id(user_id,bloco_id).nil?
 
     my_bloco = MyBloco.find_by_user_id_and_bloco_id(user_id,bloco_id)
     my_bloco.destroy
