@@ -1,5 +1,5 @@
 <div data-role="content">
-    <ul data-role="listview" data-theme="g" data-filter="false">
+    <ul data-role="listview" data-theme="g" data-filter="false" data-split-icon="minus">
       <% if !@my_blocos.nil? && @my_blocos.length >= 1  %>
            <% if params[:id].nil? %>
                 <%= link_to "Compartilhar o roteiro com meus amigos no Facebook", post_path, :class=>"facebook-share"  %>
@@ -15,6 +15,9 @@
                             <p><%= bloco.neighbor %></p>
                             <p class="ui-li-aside"><strong><%= bloco.hour %></strong></p>
                        </a>
+                       <% if params[:id].nil? %>
+                        <a href="/disconnect/<%= @user_uid %>/<%= bloco.id %>" >Não vou mais :(</a>
+                      <% end %>
                     </li>
               <% end %>
           <% else %>

@@ -8,15 +8,15 @@ class PageController < ApplicationController
   def home
     redirect_to auth_path and return unless session[:access_token]
 
-    user_uid = session[:user_id] if session[:user_id]
-    user_uid = params[:id] unless params[:id].nil?
+    @user_uid = session[:user_id] if session[:user_id]
+    @user_uid = params[:id] unless params[:id].nil?
 
-    @my_blocos = Bloco.find(:all, :order => 'date', :joins => :my_blocos, :conditions => ['my_blocos.user_id = ? and blocos.date >= ?',user_uid, Date.today])
+    @my_blocos = Bloco.find(:all, :order => 'date', :joins => :my_blocos, :conditions => ['my_blocos.user_id = ? and blocos.date >= ?',@user_uid, Date.today])
   end
 
   def blocos
     redirect_to auth_path and return unless session[:access_token]
-
+    @user_id = session[:user_id]
     @blocos = Bloco.find(:all, :order => 'date', :conditions => ["date >= ?", Date.today])
   end
 

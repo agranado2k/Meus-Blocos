@@ -1,5 +1,5 @@
 <div data-role="content">
-    <ul data-role="listview" data-theme="g" data-filter="true">
+    <ul data-role="listview" data-theme="g" data-filter="true" data-split-icon="plus">
       <% yesterday = Date.yesterday; @blocos.each do |bloco| %>
           <% if bloco.date > yesterday %>
             <li data-role="list-divider"><%= bloco.date.strftime("%a - %d de %B de %Y") %></li>
@@ -10,7 +10,11 @@
 					<h3><%= bloco.name %></h3>
 					<p><%= bloco.neighbor %></p>
 					<p class="ui-li-aside"><strong><%= bloco.hour %></strong></p>
+
                </a>
+               <% if MyBloco.find_by_user_id_and_bloco_id(@user_id, bloco.id).nil? %>
+                    <a href="/join/<%= @user_id %>/<%= bloco.id %>"  data-rel="dialog" data-transition="slideup">Eu vou! :)</a>
+               <% end %>
             </li>
       <% end %>
     </ul>
